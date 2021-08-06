@@ -12,7 +12,7 @@ func ChequeoYaExisteUsuario(email string) (models.Usuario, bool, string) {
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
-	db := MongoCN.Database("CRISTIANOTWITTING-BD")
+	db := MongoCN.Database("cristianotwitting-bd")
 	col := db.Collection("usuarios")
 
 	condicion := bson.M{"email": email}
