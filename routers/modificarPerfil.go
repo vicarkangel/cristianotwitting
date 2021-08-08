@@ -21,7 +21,7 @@ func ModificarPerfil(w http.ResponseWriter, r *http.Request) {
 
 	status, err = bd.ModificoRegistro(t, IDUsuario)
 	if err != nil {
-		http.Error(w, "Ocurro un error al intentar modificar el registo. Reintentar Nuevamente "+err.Error(), 400)
+		http.Error(w, "Ocurió un error al intentar modificar el registo. Reintentar Nuevamente "+err.Error(), 400)
 		return
 	}
 
