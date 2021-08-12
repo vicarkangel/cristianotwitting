@@ -10,8 +10,9 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+/*LeoTweets lee los Tweets de un perfil */
 func LeoTweets(ID string, pagina int64) ([]*models.DevuelvoTweets, bool) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 	db := MongoCN.Database("cristianotwitting-bd")
 	col := db.Collection("tweet")

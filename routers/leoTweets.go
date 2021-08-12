@@ -8,6 +8,7 @@ import (
 	"github.com/vicarkangel/cristianotwitting/bd"
 )
 
+/*LeoTweets leo los Tweets */
 func LeoTweets(w http.ResponseWriter, r *http.Request) {
 
 	ID := r.URL.Query().Get("id")
@@ -22,7 +23,7 @@ func LeoTweets(w http.ResponseWriter, r *http.Request) {
 
 	pagina, err := strconv.Atoi(r.URL.Query().Get("pagina"))
 	if err != nil {
-		http.Error(w, "Debe enviar el parámetro página con un valor a 0", http.StatusBadRequest)
+		http.Error(w, "Debe enviar el parámetro página con un valor mayor a 0", http.StatusBadRequest)
 		return
 	}
 
